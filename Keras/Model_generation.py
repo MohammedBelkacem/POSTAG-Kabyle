@@ -1,3 +1,7 @@
+# Par Belkacem Mohammed
+# Publié sous licence CC0
+# Copyright Juillet 2021
+
 import matplotlib.pyplot as plt
 from keras.wrappers.scikit_learn import KerasClassifier
 from keras.models import Sequential
