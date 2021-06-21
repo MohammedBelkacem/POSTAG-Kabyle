@@ -1,3 +1,7 @@
+# Par Belkacem Mohammed
+# Publié sous licence CC0
+# Copyright Juillet 2021
+
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.preprocessing import LabelEncoder
 from keras.models import load_model
