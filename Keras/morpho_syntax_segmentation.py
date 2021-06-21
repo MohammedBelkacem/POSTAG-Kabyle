@@ -1,3 +1,7 @@
+# Par Belkacem Mohammed
+# Publié sous licence CC0
+# Copyright Juillet 2021
+
 uḍfiren=[]
 uzwiren=[]
 Asenqeḍ=['...',',',';','?','!',':','"','(',')','*','_','.','[',']','{','}','«','»','+','=','“','”']
