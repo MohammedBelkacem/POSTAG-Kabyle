@@ -1,3 +1,7 @@
+# Par Belkacem Mohammed
+# Publié sous licence CC0
+# Copyright Juillet 2021
+
 import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
