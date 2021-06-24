@@ -89,7 +89,6 @@ def transform_to_dataset(tagged_sentences):
 
     for pos_tags in tagged_sentences:
         for index, (term, class_) in enumerate(pos_tags):
-            # Add basic NLP features for each sentence term
             X.append(add_basic_features(untag(pos_tags), index))
             y.append(class_)
     return X, y
@@ -101,13 +100,11 @@ dict_vectorizer = DictVectorizer(sparse=False)
 dict_vectorizer.fit(X_train + X_test + X_val)
 
 
-# Convert dict features to vectors
 X_train = dict_vectorizer.transform(X_train)
 
 X_test = dict_vectorizer.transform(X_test)
 X_val = dict_vectorizer.transform(X_val)
 
-# Fit LabelEncoder with our list of classes
 label_encoder = LabelEncoder()
 label_encoder.fit(y_train + y_test + y_val)
 #Asekles n tecraḍ
@@ -172,7 +169,6 @@ def plot_model_performance(train_loss, train_acc, train_val_loss, train_val_acc)
     green = '#2ECC71'
     orange = '#E23B13'
 
-    # plot model loss
     fig, (ax1, ax2) = plt.subplots(2, figsize=(10, 8))
     ax1.plot(range(1, len(train_loss) + 1), train_loss, blue, linewidth=5, label='asekyed')
     ax1.plot(range(1, len(train_val_loss) + 1), train_val_loss, green, linewidth=5, label='asentem')
@@ -182,7 +178,6 @@ def plot_model_performance(train_loss, train_acc, train_val_loss, train_val_acc)
     ax1.legend(loc='upper right', shadow=False)
     ax1.set_title('Taneɣruft n usruḥu simal irennu umḍan n #epochs', color=orange, fontweight='bold')
 
-    # plot model accuracy
     ax2.plot(range(1, len(train_acc) + 1), train_acc, blue, linewidth=5, label='asekyed')
     ax2.plot(range(1, len(train_val_acc) + 1), train_val_acc, green, linewidth=5, label='tiseddi')
     ax2.set_xlabel('# epoch')
