@@ -46,15 +46,12 @@ def transform_to_dataset(sentences):
 sentences=[[('Awi'),('-d'),('aman'),('.')],[('Awi'),('-as'),('-t'),('-id'),('.'),('Zemren'),('i'),('twuɣa'),('qerriḥen'),('.')]]
 
 X_train = transform_to_dataset(sentences)
-# Fit our DictVectorizer with our set of features
 dict_vectorizer = DictVectorizer(sparse=False)
 dict_vectorizer.fit(X_train)
 
-# Convert dict features to vectors
 X_train = dict_vectorizer.transform(X_train)
 
 
-# load model the kerras model
 loaded_model = load(open('model.clf', 'rb'))
 #load the input dim
 for l in loaded_model.layers:
@@ -66,7 +63,7 @@ X_train=np.concatenate((X_train, a),axis=1)
 # make prediction
 predictions = loaded_model.predict_classes(X_train,verbose=1)
 
-#lod the tag labels
+#load the tag labels
 label_encoder = LabelEncoder()
 label_encoder = load(open('label_encoder.pkl', 'rb'))
 
